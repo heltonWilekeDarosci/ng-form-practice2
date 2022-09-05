@@ -1,0 +1,173 @@
+<form>
+  <div class="container">
+    <h4 class="text-start">Address Resgistration</h4>
+    <div class="row">
+      <div class="col-md-6 form-floating">
+        <input
+        ngModel
+        type="text"
+        name="firstName"
+        id="firstName"
+        #firstName="ngModel"
+        class="form-control"
+        placeholder="Nome"
+        required
+        />
+        <label for="firstName" class="form-label">Nome</label>
+        <div
+          class="alert alert-danger"
+          *ngIf="firstName.touched && !firstName.valid"
+        >
+          Nome obrigatório.
+        </div>
+      </div>
+      <div class="col-md-6 form-floating">
+        <input
+        ngModel
+        type="text"
+        name="lastName"
+        id="lastName"
+        #lastName="ngModel"
+        class="form-control"
+        placeholder="Sobrenome"
+        required
+        />
+        <label for="lastName" class="form-label">Sobrenome</label>
+        <div
+          class="alert alert-danger"
+          *ngIf="lastName.touched && !lastName.valid"
+        >
+          Sobrenome obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="cepNum" class="form-label mt-2">CEP</label>
+        <input
+          ngModel
+          type="text"
+          name="cepNum"
+          id="cepNum"
+          #cepNum="ngModel"
+          class="form-control"
+          pattern="\d{5}-\d{3}"
+          placeholder="_____-___"
+          required
+        />
+        <div class="alert alert-danger" *ngIf="cepNum.touched && !cepNum.valid">
+          CEP obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="address" class="form-label mt-2">Endereço</label>
+        <input
+          ngModel
+          type="text"
+          name="address"
+          id="address"
+          #address="ngModel"
+          class="form-control"
+          required
+        />
+        <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+          Endereço obrigatório.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="addressNum" class="form-label mt-2">Número</label>
+        <input
+          ngModel
+          type="text"
+          name="addressNum"
+          id="addressNum"
+          #addressNum="ngModel"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="complement" class="form-label mt-2">Complemento</label>
+        <input
+          ngModel
+          type="text"
+          name="complement"
+          id="complement"
+          #complement="ngModel"
+          class="form-control"
+          placeholder="(Opcional)"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="neighborhood" class="form-label mt-2">Bairro</label>
+        <input
+          ngModel
+          type="text"
+          name="neighborhood"
+          id="neighborhood"
+          #neighborhood="ngModel"
+          class="form-control"
+          required
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="neighborhood.touched && !neighborhood.valid"
+        >
+          Bairro obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="cityName" class="form-label mt-2">Cidade</label>
+        <input
+          ngModel
+          type="text"
+          name="cityName"
+          id="cityName"
+          #cityName="ngModel"
+          class="form-control"
+          required
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="cityName.touched && !cityName.valid"
+        >
+          Cidade obrigatório.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="stateName" class="form-label mt-2">Estado</label>
+        <select
+          class="form-control"
+          ngModel
+          name="stateName"
+          id="stateName"
+          #stateName="ngModel"
+        >
+          <option value="1">Santa Catarina</option>
+          <option value="2">Paraná</option>
+          <option value="3">Rio Grande do Sul</option>
+        </select>
+        <div
+          class="alert alert-danger"
+          *ngIf="stateName.touched && !stateName.valid"
+        >
+          Estado obrigatório.
+        </div>
+      </div>
+    </div>
+    <pre></pre>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="formCheckDefault" checked>
+      <label class="form-check-label" for="formCheckDefault">
+        Quero receber emails sobre novidades.
+      </label>
+    </div>
+    <button class="btn btn-outline-primary btn-lg mt-3">Submit</button>
+    <button class="btn btn-outline-secondary btn-sm float-end mt-3">Cancel</button>
+  </div>
+</form>
